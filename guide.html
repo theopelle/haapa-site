@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Back up, move, and export your data · Haapa</title>
+<meta name="description" content="A step-by-step guide to backing up Haapa, moving to a new phone, exporting your workouts to a spreadsheet, importing workouts, and adding a shared plan.">
+<link rel="alternate" hreflang="en" href="https://haapa.app/guide.html">
+<link rel="alternate" hreflang="fi" href="https://haapa.app/fi/guide.html">
+<link rel="canonical" href="https://haapa.app/guide.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#EEE5D5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#221C18" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haapa">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Back up, move, and export your data · Haapa">
+<meta property="og:description" content="A step-by-step guide to backing up Haapa, moving to a new phone, exporting your workouts to a spreadsheet, importing workouts, and adding a shared plan.">
+<meta property="og:url" content="https://haapa.app/guide.html">
+<meta property="og:image" content="https://haapa.app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<!-- one icon definition, reused: variant B, tilted leaf, level horizon -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <path id="leaf" d="M0 -44 Q7 -37 14 -34 Q24 -32 29 -24 Q38 -19 38 -10 Q44 -3 41 4 Q43 13 37 19 Q35 28 26 29 Q20 35 12 34 Q5 36 0 35 Q-5 36 -12 34 Q-20 35 -26 29 Q-35 28 -37 19 Q-43 13 -41 4 Q-44 -3 -38 -10 Q-38 -19 -29 -24 Q-24 -32 -14 -34 Q-7 -37 0 -44 Z"/>
+  <clipPath id="leafclip"><use href="#leaf" transform="translate(56 54) rotate(-12) scale(1.12)"/></clipPath>
+  <symbol id="haapa" viewBox="0 0 112 112">
+   <rect width="112" height="112" style="fill:var(--i-ground)"/>
+   <g clip-path="url(#leafclip)">
+    <rect width="112" height="72" style="fill:var(--i-sky)"/>
+    <rect y="72" width="112" height="40" style="fill:var(--i-water)"/>
+    <path d="M40 72 A16 16 0 0 1 72 72 Z" style="fill:var(--i-sun)"/>
+    <g style="stroke:var(--i-sun)" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" fill="none"><path d="M44 79 H68"/><path d="M50 86 H62"/></g>
+   </g>
+   <path transform="translate(56 54) rotate(-12) scale(1.12)" d="M0 35 Q2 42 6 48" style="stroke:var(--i-sky)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </symbol>
+ </defs>
+</svg>
+
+
+<header class="page-head">
+ <div class="wrap">
+  <nav class="top" aria-label="Site">
+   <a class="brand" href="index.html" aria-label="Haapa, home"><svg class="icon" width="40" height="40" aria-hidden="true"><use href="#haapa"/></svg><b class="serif">Haapa</b></a>
+   <div class="navr">
+    <a class="navlink wide" href="why.html">Why Haapa</a>
+    <a class="navlink wide" href="faq.html">FAQ</a>
+    <a class="navlink wide" href="guide.html" aria-current="page">Guide</a>
+    <div class="lang wide" role="group" aria-label="Language"><a href="guide.html" aria-current="true" lang="en">English</a><a href="fi/guide.html" lang="fi" hreflang="fi">Suomi</a></div>
+    <details class="menu"><summary aria-label="Menu"><svg class="bars" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="x" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+     <div class="menu-in">
+      <a class="mlink" href="why.html">Why Haapa</a>
+      <a class="mlink" href="faq.html">FAQ</a>
+      <a class="mlink" href="guide.html" aria-current="page">Guide</a>
+      <div class="lang" role="group" aria-label="Language"><a href="guide.html" aria-current="true" lang="en">English</a><a href="fi/guide.html" lang="fi" hreflang="fi">Suomi</a></div>
+     </div>
+    </details>
+   </div>
+  </nav>
+  <div class="intro">
+   <h1 class="serif">Your data, step by step</h1>
+   <p>Everything you log stays on your phone. This guide shows how to keep a copy somewhere safe, move to a new phone, and take your workouts to a spreadsheet. Each part takes about a minute.</p>
+   <nav class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#auto-s">Turn on your phone's backup</a></li><li><a href="#backup-s">Make a backup by hand</a></li><li><a href="#restore-s">Restore or move to a new phone</a></li><li><a href="#export-s">Export to a spreadsheet</a></li><li><a href="#import-s">Import from Strong, Hevy, or Haapa</a></li><li><a href="#plan-s">Add a shared plan</a></li></ol></nav>
+  </div>
+ </div>
+</header>
+
+<main class="wrap guide">
+ <section class="f g" aria-labelledby="auto" id="auto-s">
+  <div class="txt g-wide">
+    <p class="kicker k-lake">1 · Automatic</p>
+    <h2 id="auto" class="serif">Turn on your phone's backup</h2>
+    <p>Your phone can back up Haapa by itself, along with your other apps. If you get a new phone and set it up from that backup, your workouts come back. Check once that it's on.</p>
+    <ul class="platforms"><li><b>Android:</b> open the phone's <b>Settings</b> › <b>Google</b> › <b>Backup</b>, and make sure backup is on, including app data. The names can differ a little from phone to phone.</li><li><b>iPhone:</b> open <b>Settings</b> › your name › <b>iCloud</b> › <b>iCloud Backup</b>. If your iCloud space is too small for a whole phone, back up to your computer instead: Finder on a Mac, or the Apple Devices app on Windows.</li></ul>
+    <p class="tip">In Haapa, <b>Settings</b> › <b>How backups work</b> explains the same thing. Haapa can't see whether your phone's backup is on, so it never says it is. A file made with <b>Back up now</b> (next part) is the copy you control yourself.</p>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="backup" id="backup-s">
+  <div class="row">
+   <div class="txt">
+    <p class="kicker k-ember">2 · By hand</p>
+    <h2 id="backup" class="serif">Make a backup by hand</h2>
+    <p>A backup is one file with everything: your workouts, routines, plans, timers, and settings.</p>
+    <ol class="steps"><li>Open <b>Settings</b>, the last tab at the bottom.</li><li>Under <b>Your data</b>, tap <b>Back up now</b>.</li><li>Your phone's share menu opens. Save the file somewhere that isn't only this phone: Files or iCloud Drive on iPhone, Google Drive on Android, or send it to yourself by email.</li></ol>
+    <p class="tip">The file is called <code>haapa-backup-</code> plus the date, for example <code>haapa-backup-2026-11-21.json</code>. Under <b>Back up now</b>, Settings shows when you last made one. Once a month is a good habit, and always before you change phones.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="img/guide/settings-data-dark.jpg" media="(prefers-color-scheme: dark)"><img src="img/guide/settings-data-light.jpg" width="390" height="844" alt="Haapa Settings, the Your data section: How backups work, Back up now with the last backup file 4 days ago, Bring in data, and Export as CSV" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="restore" id="restore-s">
+  <div class="row flip">
+   <div class="txt">
+    <p class="kicker k-lake">3 · Restore</p>
+    <h2 id="restore" class="serif">Restore or move to a new phone</h2>
+    <p>Use your backup file to bring everything back, on this phone or on a new one.</p>
+    <ol class="steps"><li>Install Haapa on the new phone and open <b>Settings</b>.</li><li>Tap <b>Bring in data</b>, then <b>A Haapa backup</b>, and choose your backup file.</li><li>Haapa shows what's in the backup. Choose how to bring it in:<br><b>Merge with this phone</b> adds what this phone doesn't have. Nothing is added twice, and the newest change wins.<br><b>Replace everything</b> makes this phone exactly like the backup. Haapa keeps a safety copy of what's there now first.</li></ol>
+    <p class="tip">Not sure which one? Choose <b>Merge</b>. It never removes anything. It's also how you combine two phones into one.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="img/guide/restore-dark.jpg" media="(prefers-color-scheme: dark)"><img src="img/guide/restore-light.jpg" width="390" height="844" alt="Restore a backup: the backup's date, how many workouts and routines it has, and the choices Merge with this phone and Replace everything" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="export" id="export-s">
+  <div class="row">
+   <div class="txt">
+    <p class="kicker k-gold">4 · Export</p>
+    <h2 id="export" class="serif">Export to a spreadsheet</h2>
+    <p>Take your whole history to Excel, Numbers, or Google Sheets.</p>
+    <ol class="steps"><li>In <b>Settings</b>, under <b>Your data</b>, tap <b>Export as CSV</b>.</li><li>Save or send the file, called <code>haapa-workouts-</code> plus the date.</li><li>Open it in your spreadsheet app. Every set is one row, with the date, the exercise, the weight, and the reps.</li></ol>
+    <p class="tip">A CSV file is for reading and sorting your history. To keep everything, including routines, plans, and timers, make a backup. The columns are described on the <a href="csv-format.html">CSV format page</a>.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="img/guide/settings-data-dark.jpg" media="(prefers-color-scheme: dark)"><img src="img/guide/settings-data-light.jpg" width="390" height="844" alt="Settings, Your data section, with Export as CSV at the bottom" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="import" id="import-s">
+  <div class="row flip">
+   <div class="txt">
+    <p class="kicker k-leaf">5 · Import</p>
+    <h2 id="import" class="serif">Import workouts from Strong, Hevy, or Haapa</h2>
+    <p>Bring your history with you, from Strong or Hevy, or from a Haapa CSV file made on another phone.</p>
+    <ol class="steps"><li><b>Coming from Strong or Hevy?</b> First export your workouts as a CSV file in that app.</li><li>In Haapa, open <b>Settings</b> and tap <b>Bring in data</b>.</li><li>Pick where the file comes from: <b>Strong or Hevy</b>, or <b>A Haapa CSV export</b>. Then choose the file.</li><li>Haapa shows how many workouts and sets it found, and which exercise names it matched. Workouts already on this phone are skipped. Tap <b>Import</b> to add them.</li></ol>
+    <p class="tip">Nothing is added until you tap Import, and nothing is ever counted twice, so trying again is safe.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="img/guide/bring-dark.jpg" media="(prefers-color-scheme: dark)"><img src="img/guide/bring-light.jpg" width="390" height="844" alt="Bring your data: A Haapa backup, Strong or Hevy, A Haapa CSV export, and A plan someone shared, each with what it brings in" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="plan" id="plan-s">
+  <div class="row">
+   <div class="txt">
+    <p class="kicker k-heather">6 · Shared plans</p>
+    <h2 id="plan" class="serif">Add a plan someone shared with you</h2>
+    <p>A coach, a PT, or a friend can send you a whole program.</p>
+    <ol class="steps"><li><b>A QR code:</b> point your phone's camera at it. Haapa opens with the plan.</li><li><b>A file</b> (<code>.haapa</code>) <b>or the Excel template:</b> in <b>Settings</b>, tap <b>Bring in data</b>, then <b>A plan someone shared</b>, and choose the file.</li><li>Check the preview, then tap <b>Add to my plans</b>.</li></ol>
+    <p class="tip">The plan becomes yours. You can change any exercise, weight, or rule afterwards, and the person who shared it can't see what you do with it.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="img/guide/shared-plan-dark.jpg" media="(prefers-color-scheme: dark)"><img src="img/guide/shared-plan-light.jpg" width="390" height="844" alt="A shared plan before it's added: its routines and exercises, and the Add to my plans button" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+</main>
+
+<section class="end" aria-labelledby="get-h">
+ <div class="wrap">
+  <svg class="icon" width="88" height="88" aria-hidden="true"><use href="#haapa"/></svg>
+  <h2 id="get-h" class="serif">Train at your own pace.</h2>
+  <p>Haapa is coming to iPhone and Android in early 2027.</p>
+  <p class="notify"><a href="mailto:hello@haapa.app?subject=Tell%20me%20when%20Haapa%20is%20out">Tell me when it's out</a><span>Send us an email. We'll write once, when the app is out, then delete your address.</span></p>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <a href="mailto:hello@haapa.app">hello@haapa.app</a>
+  <a href="why.html">Why Haapa</a>
+  <a href="faq.html">FAQ</a>
+  <a href="guide.html">Guide</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="csv-format.html">CSV format</a>
+  <span style="padding:8px 0">© 2026 Haapa</span>
+ </div>
+</footer>
+</body></html>

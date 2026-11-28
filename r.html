@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Haapa plan</title>
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#EEE5D5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#221C18" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="site.css">
+<!--
+  haapa.app/r#<digits>: the link inside a shared plan's QR code (from build 4).
+  With Haapa installed, the phone opens the app straight away (App Links on Android, Universal Links on iPhone,
+  through /.well-known/). This page only shows when Haapa isn't installed or the link check hasn't run yet.
+  The digits are the plan itself. They are read from the # part of the address, which browsers never send to
+  the server, and they are only used to build the "Open in Haapa" link below. No fetch, no analytics, nothing stored.
+-->
+<style>
+.r-card{max-width:30em;margin:0 auto;padding:28px 0 56px;text-align:center}
+.r-card .icon{margin:0 auto}
+.r-card h1{font-size:clamp(30px,7vw,40px);line-height:1.15;margin-top:18px}
+.r-card p{color:var(--ink2);margin-top:12px}
+.r-open{display:inline-flex;align-items:center;justify-content:center;min-height:52px;margin-top:26px;padding:0 26px;border-radius:14px;background:var(--ember);color:var(--on-ember);font-weight:600;font-size:17px;text-decoration:none}
+.r-stores{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;margin-top:22px}
+.r-stores a{color:var(--lake);font-weight:600;text-decoration:none;padding:8px 0}
+.r-quiet{font-size:14px;margin-top:28px}
+[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<header class="page-head">
+ <div class="wrap">
+  <nav class="top" aria-label="Site">
+   <a class="brand" href="/" aria-label="Haapa, home"><img class="icon" src="icon.svg" width="40" height="40" alt=""><b class="serif">Haapa</b></a>
+  </nav>
+ </div>
+</header>
+
+<main class="wrap">
+ <div class="r-card">
+  <img class="icon" src="icon.svg" width="72" height="72" alt="">
+  <h1 class="serif" id="r-title">A Haapa plan</h1>
+  <p id="r-lead">Someone shared a training plan with you. Open it in Haapa, or get Haapa first.</p>
+  <a class="r-open" id="r-open" href="#" hidden>Open in Haapa</a>
+  <p id="r-desktop" hidden>Open this link on your phone, where Haapa is installed.</p>
+  <div class="r-stores" id="r-stores">
+   <a href="https://apps.apple.com/app/id6835524952" id="r-ios">Get Haapa on the App Store</a>
+   <a href="https://play.google.com/store/apps/details?id=app.haapa" id="r-android">Get Haapa on Google Play</a>
+  </div>
+  <p class="r-quiet" id="r-privacy">The plan is in the link itself. It isn't sent to this site.</p>
+ </div>
+</main>
+
+<noscript><p style="text-align:center;padding:0 16px 40px">Open this link on your phone with Haapa installed.</p></noscript>
+
+<script>
+(function () {
+  var T = {
+    en: {
+      title: 'A Haapa plan',
+      lead: 'Someone shared a training plan with you. Open it in Haapa, or get Haapa first.',
+      open: 'Open in Haapa',
+      desktop: 'Open this link on your phone, where Haapa is installed.',
+      ios: 'Get Haapa on the App Store',
+      android: 'Get Haapa on Google Play',
+      privacy: "The plan is in the link itself. It isn't sent to this site.",
+      broken: 'This link is incomplete. Ask for the plan again.'
+    },
+    fi: {
+      title: 'Haapa-suunnitelma',
+      lead: 'Joku jakoi kanssasi treenisuunnitelman. Avaa se Haapassa tai hanki Haapa ensin.',
+      open: 'Avaa Haapassa',
+      desktop: 'Avaa tämä linkki puhelimessa, jossa Haapa on.',
+      ios: 'Hanki Haapa App Storesta',
+      android: 'Hanki Haapa Google Playstä',
+      privacy: 'Suunnitelma on itse linkissä. Sitä ei lähetetä tälle sivustolle.',
+      broken: 'Tämä linkki on vajaa. Pyydä suunnitelma uudelleen.'
+    }
+  };
+  var fi = /^fi\b/i.test(navigator.language || '');
+  var t = fi ? T.fi : T.en;
+  if (fi) document.documentElement.lang = 'fi';
+  var $ = function (id) { return document.getElementById(id); };
+  document.title = t.title;
+  $('r-title').textContent = t.title;
+  $('r-open').textContent = t.open;
+  $('r-desktop').textContent = t.desktop;
+  $('r-ios').textContent = t.ios;
+  $('r-android').textContent = t.android;
+  $('r-privacy').textContent = t.privacy;
+
+  var m = /^#(\d+)$/.exec(location.hash || '');
+  if (!m) { $('r-lead').textContent = t.broken; $('r-stores').hidden = true; $('r-privacy').hidden = true; return; }
+  $('r-lead').textContent = t.lead;
+
+  var digits = m[1];
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+  var open = $('r-open');
+  if (isIOS) { open.href = 'haapa://p/' + digits; open.hidden = false; $('r-android').hidden = true; }
+  else if (isAndroid) { open.href = 'intent://p/' + digits + '#Intent;scheme=haapa;package=app.haapa;end'; open.hidden = false; $('r-ios').hidden = true; }
+  else { $('r-desktop').hidden = false; }
+})();
+</script>
+</body>
+</html>

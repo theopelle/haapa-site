@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Varmuuskopioi, siirrä ja vie tietosi · Haapa</title>
+<meta name="description" content="Vaiheittaiset ohjeet: Haapan varmuuskopio, siirto uuteen puhelimeen, treenien vienti taulukkolaskentaan, treenien tuonti ja jaetun suunnitelman lisääminen.">
+<link rel="alternate" hreflang="en" href="https://haapa.app/guide.html">
+<link rel="alternate" hreflang="fi" href="https://haapa.app/fi/guide.html">
+<link rel="canonical" href="https://haapa.app/fi/guide.html">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#EEE5D5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#221C18" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haapa">
+<meta property="og:locale" content="fi_FI">
+<meta property="og:title" content="Varmuuskopioi, siirrä ja vie tietosi · Haapa">
+<meta property="og:description" content="Vaiheittaiset ohjeet: Haapan varmuuskopio, siirto uuteen puhelimeen, treenien vienti taulukkolaskentaan, treenien tuonti ja jaetun suunnitelman lisääminen.">
+<meta property="og:url" content="https://haapa.app/fi/guide.html">
+<meta property="og:image" content="https://haapa.app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<!-- one icon definition, reused: variant B, tilted leaf, level horizon -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <path id="leaf" d="M0 -44 Q7 -37 14 -34 Q24 -32 29 -24 Q38 -19 38 -10 Q44 -3 41 4 Q43 13 37 19 Q35 28 26 29 Q20 35 12 34 Q5 36 0 35 Q-5 36 -12 34 Q-20 35 -26 29 Q-35 28 -37 19 Q-43 13 -41 4 Q-44 -3 -38 -10 Q-38 -19 -29 -24 Q-24 -32 -14 -34 Q-7 -37 0 -44 Z"/>
+  <clipPath id="leafclip"><use href="#leaf" transform="translate(56 54) rotate(-12) scale(1.12)"/></clipPath>
+  <symbol id="haapa" viewBox="0 0 112 112">
+   <rect width="112" height="112" style="fill:var(--i-ground)"/>
+   <g clip-path="url(#leafclip)">
+    <rect width="112" height="72" style="fill:var(--i-sky)"/>
+    <rect y="72" width="112" height="40" style="fill:var(--i-water)"/>
+    <path d="M40 72 A16 16 0 0 1 72 72 Z" style="fill:var(--i-sun)"/>
+    <g style="stroke:var(--i-sun)" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" fill="none"><path d="M44 79 H68"/><path d="M50 86 H62"/></g>
+   </g>
+   <path transform="translate(56 54) rotate(-12) scale(1.12)" d="M0 35 Q2 42 6 48" style="stroke:var(--i-sky)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </symbol>
+ </defs>
+</svg>
+
+
+<header class="page-head">
+ <div class="wrap">
+  <nav class="top" aria-label="Sivusto">
+   <a class="brand" href="index.html" aria-label="Haapa, etusivu"><svg class="icon" width="40" height="40" aria-hidden="true"><use href="#haapa"/></svg><b class="serif">Haapa</b></a>
+   <div class="navr">
+    <a class="navlink wide" href="why.html">Miksi Haapa</a>
+    <a class="navlink wide" href="faq.html">Usein kysyttyä</a>
+    <a class="navlink wide" href="guide.html" aria-current="page">Ohjeet</a>
+    <div class="lang wide" role="group" aria-label="Kieli"><a href="../guide.html" lang="en" hreflang="en">English</a><a href="guide.html" aria-current="true" lang="fi">Suomi</a></div>
+    <details class="menu"><summary aria-label="Valikko"><svg class="bars" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="x" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+     <div class="menu-in">
+      <a class="mlink" href="why.html">Miksi Haapa</a>
+      <a class="mlink" href="faq.html">Usein kysyttyä</a>
+      <a class="mlink" href="guide.html" aria-current="page">Ohjeet</a>
+      <div class="lang" role="group" aria-label="Kieli"><a href="../guide.html" lang="en" hreflang="en">English</a><a href="guide.html" aria-current="true" lang="fi">Suomi</a></div>
+     </div>
+    </details>
+   </div>
+  </nav>
+  <div class="intro">
+   <h1 class="serif">Tietosi vaihe vaiheelta</h1>
+   <p>Kaikki kirjaamasi pysyy puhelimessasi. Tässä ohjeessa näytetään, miten pidät kopion tallessa, siirryt uuteen puhelimeen ja viet treenisi taulukkoon. Jokainen osa vie noin minuutin.</p>
+   <nav class="toc" aria-label="Tällä sivulla"><p>Tällä sivulla</p><ol><li><a href="#auto-s">Laita puhelimesi varmuuskopio päälle</a></li><li><a href="#backup-s">Tee varmuuskopio itse</a></li><li><a href="#restore-s">Palauta tai siirry uuteen puhelimeen</a></li><li><a href="#export-s">Vie taulukkoon</a></li><li><a href="#import-s">Tuo Strongista, Hevystä tai Haapasta</a></li><li><a href="#plan-s">Lisää jaettu suunnitelma</a></li></ol></nav>
+  </div>
+ </div>
+</header>
+
+<main class="wrap guide">
+ <section class="f g" aria-labelledby="auto" id="auto-s">
+  <div class="txt g-wide">
+    <p class="kicker k-lake">1 · Automaattisesti</p>
+    <h2 id="auto" class="serif">Laita puhelimesi varmuuskopio päälle</h2>
+    <p>Puhelimesi voi varmuuskopioida Haapan itse, muiden sovellustesi mukana. Kun saat uuden puhelimen ja otat sen käyttöön siitä varmuuskopiosta, treenisi tulevat takaisin. Tarkista kerran, että se on päällä.</p>
+    <ul class="platforms"><li><b>Android:</b> avaa puhelimen <b>Asetukset</b> › <b>Google</b> › <b>Varmuuskopiointi</b> ja varmista, että varmuuskopiointi on päällä, myös sovellusten tiedot. Nimet voivat vaihdella hieman puhelimesta toiseen.</li><li><b>iPhone:</b> avaa <b>Asetukset</b> › oma nimesi › <b>iCloud</b> › <b>iCloud-varmuuskopio</b>. Jos iCloud-tilasi on liian pieni koko puhelimelle, varmuuskopioi tietokoneelle: Macilla Finderissa tai Windowsissa Apple Devices -sovelluksella.</li></ul>
+    <p class="tip">Haapassa <b>Asetukset</b> › <b>Miten varmuuskopiot toimivat</b> kertoo saman. Haapa ei näe, onko puhelimesi varmuuskopio päällä, joten se ei koskaan väitä niin. <b>Varmuuskopioi nyt</b> -toiminnolla tehty tiedosto (seuraava osa) on kopio, jota hallitset itse.</p>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="backup" id="backup-s">
+  <div class="row">
+   <div class="txt">
+    <p class="kicker k-ember">2 · Itse</p>
+    <h2 id="backup" class="serif">Tee varmuuskopio itse</h2>
+    <p>Varmuuskopio on yksi tiedosto, jossa on kaikki: treenisi, rutiinisi, suunnitelmasi, ajastimesi ja asetuksesi.</p>
+    <ol class="steps"><li>Avaa <b>Asetukset</b>, alareunan viimeinen välilehti.</li><li>Kohdassa <b>Tietosi</b> napauta <b>Varmuuskopioi nyt</b>.</li><li>Puhelimesi jakovalikko aukeaa. Tallenna tiedosto paikkaan, joka ei ole vain tässä puhelimessa: iPhonella Tiedostot tai iCloud Drive, Androidilla Google Drive tai lähetä se itsellesi sähköpostilla.</li></ol>
+    <p class="tip">Tiedoston nimi on <code>haapa-backup-</code> ja päivämäärä, esimerkiksi <code>haapa-backup-2026-11-21.json</code>. <b>Varmuuskopioi nyt</b> -kohdan alla näet, milloin teit viimeksi varmuuskopion. Kerran kuussa on hyvä tapa ja aina ennen puhelimen vaihtoa.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="../img/guide/fi-settings-data-dark.jpg" media="(prefers-color-scheme: dark)"><img src="../img/guide/fi-settings-data-light.jpg" width="390" height="844" alt="Haapan asetusten Tietosi-osio: Miten varmuuskopiot toimivat, Varmuuskopioi nyt ja viimeisin varmuuskopiotiedosto 4 päivää sitten, Tuo tietoja ja Vie CSV-tiedostona" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="restore" id="restore-s">
+  <div class="row flip">
+   <div class="txt">
+    <p class="kicker k-lake">3 · Palautus</p>
+    <h2 id="restore" class="serif">Palauta tai siirry uuteen puhelimeen</h2>
+    <p>Varmuuskopiolla saat kaiken takaisin, tähän puhelimeen tai uuteen.</p>
+    <ol class="steps"><li>Asenna Haapa uuteen puhelimeen ja avaa <b>Asetukset</b>.</li><li>Napauta <b>Tuo tietoja</b>, sitten <b>Haapa-varmuuskopio</b> ja valitse varmuuskopiotiedosto.</li><li>Haapa näyttää, mitä varmuuskopiossa on. Valitse, miten tuot sen:<br><b>Yhdistä tämän puhelimen tietoihin</b> lisää sen, mitä tässä puhelimessa ei ole. Mitään ei tule kahteen kertaan ja uusin muutos voittaa.<br><b>Korvaa kaikki</b> tekee puhelimesta täsmälleen varmuuskopion kaltaisen. Haapa ottaa ensin turvakopion nykyisistä tiedoista.</li></ol>
+    <p class="tip">Etkö ole varma? Valitse <b>Yhdistä</b>. Se ei koskaan poista mitään. Näin voit myös yhdistää kahden puhelimen tiedot.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="../img/guide/fi-restore-dark.jpg" media="(prefers-color-scheme: dark)"><img src="../img/guide/fi-restore-light.jpg" width="390" height="844" alt="Varmuuskopion palautus: varmuuskopion päivä, treenien ja rutiinien määrä sekä valinnat Yhdistä tämän puhelimen tietoihin ja Korvaa kaikki" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="export" id="export-s">
+  <div class="row">
+   <div class="txt">
+    <p class="kicker k-gold">4 · Vienti</p>
+    <h2 id="export" class="serif">Vie taulukkoon</h2>
+    <p>Vie koko historiasi Exceliin, Numbersiin tai Google Sheetsiin.</p>
+    <ol class="steps"><li>Kohdassa <b>Asetukset</b> › <b>Tietosi</b> napauta <b>Vie CSV-tiedostona</b>.</li><li>Tallenna tai lähetä tiedosto. Sen nimi on <code>haapa-workouts-</code> ja päivämäärä.</li><li>Avaa se taulukkosovelluksessa. Jokainen sarja on oma rivinsä: päivä, liike, paino ja toistot.</li></ol>
+    <p class="tip">CSV-tiedosto on historian lukemiseen ja lajitteluun. Jos haluat tallentaa kaiken, myös rutiinit, suunnitelmat ja ajastimet, tee varmuuskopio. Sarakkeet on kuvattu <a href="../csv-format.html" hreflang="en">CSV-muodon sivulla</a> (englanniksi).</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="../img/guide/fi-settings-data-dark.jpg" media="(prefers-color-scheme: dark)"><img src="../img/guide/fi-settings-data-light.jpg" width="390" height="844" alt="Asetusten Tietosi-osio, jonka alimpana Vie CSV-tiedostona" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="import" id="import-s">
+  <div class="row flip">
+   <div class="txt">
+    <p class="kicker k-leaf">5 · Tuonti</p>
+    <h2 id="import" class="serif">Tuo treenit Strongista, Hevystä tai Haapasta</h2>
+    <p>Ota historiasi mukaan Strongista tai Hevystä tai toisessa puhelimessa tehdystä Haapan CSV-tiedostosta.</p>
+    <ol class="steps"><li><b>Tuletko Strongista tai Hevystä?</b> Vie ensin treenisi CSV-tiedostona siinä sovelluksessa.</li><li>Avaa Haapassa <b>Asetukset</b> ja napauta <b>Tuo tietoja</b>.</li><li>Valitse, mistä tiedosto tulee: <b>Strong tai Hevy</b> tai <b>Haapan CSV-vienti</b>. Valitse sitten tiedosto.</li><li>Haapa näyttää, montako treeniä ja sarjaa se löysi ja mitkä liikkeiden nimet se tunnisti. Puhelimessa jo olevat treenit ohitetaan. Napauta <b>Tuo</b>, niin treenit lisätään.</li></ol>
+    <p class="tip">Mitään ei lisätä ennen kuin napautat Tuo, eikä mitään lasketa koskaan kahteen kertaan, joten uusi yritys on turvallinen.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="../img/guide/fi-bring-dark.jpg" media="(prefers-color-scheme: dark)"><img src="../img/guide/fi-bring-light.jpg" width="390" height="844" alt="Tuo tietosi: Haapa-varmuuskopio, Strong tai Hevy, Haapan CSV-vienti ja Jaettu suunnitelma, kunkin kohdalla mitä se tuo" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+ <section class="f g" aria-labelledby="plan" id="plan-s">
+  <div class="row">
+   <div class="txt">
+    <p class="kicker k-heather">6 · Jaetut suunnitelmat</p>
+    <h2 id="plan" class="serif">Lisää sinulle jaettu suunnitelma</h2>
+    <p>Valmentaja, personal trainer tai kaveri voi lähettää sinulle koko ohjelman.</p>
+    <ol class="steps"><li><b>QR-koodi:</b> osoita sitä puhelimesi kameralla. Haapa aukeaa suunnitelman kanssa.</li><li><b>Tiedosto</b> (<code>.haapa</code>) <b>tai Excel-pohja:</b> kohdassa <b>Asetukset</b> napauta <b>Tuo tietoja</b>, sitten <b>Jaettu suunnitelma</b> ja valitse tiedosto.</li><li>Tarkista esikatselu ja napauta <b>Lisää suunnitelmiini</b>.</li></ol>
+    <p class="tip">Suunnitelmasta tulee sinun. Voit muuttaa liikkeitä, painoja ja sääntöjä jälkeenpäin, eikä jakaja näe, mitä teet sillä.</p>
+   </div>
+   <div class="phone"><div class="screen"><picture><source srcset="../img/guide/fi-shared-plan-dark.jpg" media="(prefers-color-scheme: dark)"><img src="../img/guide/fi-shared-plan-light.jpg" width="390" height="844" alt="Jaettu suunnitelma ennen lisäämistä: rutiinit ja liikkeet sekä Lisää suunnitelmiini -painike" loading="lazy" decoding="async"></picture></div></div>
+  </div>
+ </section>
+</main>
+
+<section class="end" aria-labelledby="get-h">
+ <div class="wrap">
+  <svg class="icon" width="88" height="88" aria-hidden="true"><use href="#haapa"/></svg>
+  <h2 id="get-h" class="serif">Treenaa omaan tahtiisi.</h2>
+  <p>Haapa on tulossa iPhonelle ja Androidille alkuvuodesta 2027.</p>
+  <p class="notify"><a href="mailto:hello@haapa.app?subject=Kerro%20kun%20Haapa%20julkaistaan">Kerro, kun se julkaistaan</a><span>Lähetä meille sähköpostia. Kirjoitamme kerran, kun sovellus julkaistaan, ja poistamme sitten osoitteesi.</span></p>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <a href="mailto:hello@haapa.app">hello@haapa.app</a>
+  <a href="why.html">Miksi Haapa</a>
+  <a href="faq.html">Usein kysyttyä</a>
+  <a href="guide.html">Ohjeet</a>
+  <a href="privacy.html">Tietosuoja</a>
+  <a href="../csv-format.html">CSV-muoto (englanniksi)</a>
+  <span style="padding:8px 0">© 2026 Haapa</span>
+ </div>
+</footer>
+</body></html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV format · Haapa</title>
+<meta name="description" content="The columns in Haapa's CSV export, and the files Haapa can import.">
+<link rel="canonical" href="https://haapa.app/csv-format.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#EEE5D5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#221C18" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haapa">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="CSV format · Haapa">
+<meta property="og:description" content="The columns in Haapa's CSV export, and the files Haapa can import.">
+<meta property="og:url" content="https://haapa.app/csv-format.html">
+<meta property="og:image" content="https://haapa.app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<!-- one icon definition, reused: variant B, tilted leaf, level horizon -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <path id="leaf" d="M0 -44 Q7 -37 14 -34 Q24 -32 29 -24 Q38 -19 38 -10 Q44 -3 41 4 Q43 13 37 19 Q35 28 26 29 Q20 35 12 34 Q5 36 0 35 Q-5 36 -12 34 Q-20 35 -26 29 Q-35 28 -37 19 Q-43 13 -41 4 Q-44 -3 -38 -10 Q-38 -19 -29 -24 Q-24 -32 -14 -34 Q-7 -37 0 -44 Z"/>
+  <clipPath id="leafclip"><use href="#leaf" transform="translate(56 54) rotate(-12) scale(1.12)"/></clipPath>
+  <symbol id="haapa" viewBox="0 0 112 112">
+   <rect width="112" height="112" style="fill:var(--i-ground)"/>
+   <g clip-path="url(#leafclip)">
+    <rect width="112" height="72" style="fill:var(--i-sky)"/>
+    <rect y="72" width="112" height="40" style="fill:var(--i-water)"/>
+    <path d="M40 72 A16 16 0 0 1 72 72 Z" style="fill:var(--i-sun)"/>
+    <g style="stroke:var(--i-sun)" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" fill="none"><path d="M44 79 H68"/><path d="M50 86 H62"/></g>
+   </g>
+   <path transform="translate(56 54) rotate(-12) scale(1.12)" d="M0 35 Q2 42 6 48" style="stroke:var(--i-sky)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </symbol>
+ </defs>
+</svg>
+
+
+<header class="page-head">
+ <div class="wrap">
+  <nav class="top" aria-label="Site">
+   <a class="brand" href="index.html" aria-label="Haapa, home"><svg class="icon" width="40" height="40" aria-hidden="true"><use href="#haapa"/></svg><b class="serif">Haapa</b></a>
+   <div class="navr">
+    <a class="navlink wide" href="why.html">Why Haapa</a>
+    <a class="navlink wide" href="faq.html">FAQ</a>
+    <a class="navlink wide" href="guide.html">Guide</a>
+    <div class="lang wide" role="group" aria-label="Language"><a href="csv-format.html" aria-current="true" lang="en">English</a><a href="fi/index.html" lang="fi" hreflang="fi">Suomi</a></div>
+    <details class="menu"><summary aria-label="Menu"><svg class="bars" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="x" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+     <div class="menu-in">
+      <a class="mlink" href="why.html">Why Haapa</a>
+      <a class="mlink" href="faq.html">FAQ</a>
+      <a class="mlink" href="guide.html">Guide</a>
+      <div class="lang" role="group" aria-label="Language"><a href="csv-format.html" aria-current="true" lang="en">English</a><a href="fi/index.html" lang="fi" hreflang="fi">Suomi</a></div>
+     </div>
+    </details>
+   </div>
+  </nav>
+  <div class="intro">
+   <h1 class="serif">The CSV format</h1>
+   <p>Haapa exports every set you log as a plain CSV file that opens in Excel, Numbers, or Google Sheets. Here is what's inside, so your data is always yours to use.</p>
+  </div>
+ </div>
+</header>
+
+<main class="wrap doc">
+
+ <h2 class="serif">The file</h2>
+ <ul>
+  <li>One row per set.</li>
+  <li>UTF-8 with a byte-order mark, so Excel shows ä, ö, å, and é correctly.</li>
+  <li>Comma-separated, with quotes only where a cell needs them.</li>
+  <li>Weights are always in kilograms with a dot decimal (82.5), whatever your phone's language.</li>
+ </ul>
+
+ <h2 class="serif">The columns</h2>
+ <div class="tablewrap"><table class="spec">
+  <thead><tr><th scope="col">Column</th><th scope="col">Example</th><th scope="col">Notes</th></tr></thead>
+  <tbody>
+   <tr><td><code>date</code></td><td>2026-11-10</td><td>The day the workout started.</td></tr>
+   <tr><td><code>workout_name</code></td><td>Upper A</td><td></td></tr>
+   <tr><td><code>start_time</code></td><td>2026-11-10T18:02:00+02:00</td><td>ISO 8601, with the time zone.</td></tr>
+   <tr><td><code>workout_duration_s</code></td><td>3720</td><td>Seconds. Empty if the workout was never finished.</td></tr>
+   <tr><td><code>exercise_name</code></td><td>Bench Press (Barbell)</td><td>In the app's language at the time of export.</td></tr>
+   <tr><td><code>set_order</code></td><td>1</td><td>Counts from 1 for each exercise.</td></tr>
+   <tr><td><code>set_type</code></td><td>normal</td><td><code>normal</code> or <code>warmup</code>.</td></tr>
+   <tr><td><code>weight_kg</code></td><td>82.5</td><td>A negative number means assisted (bodyweight sets). Empty if none.</td></tr>
+   <tr><td><code>reps</code></td><td>8</td><td>Empty for timed sets.</td></tr>
+   <tr><td><code>duration_s</code></td><td>60</td><td>Timed sets only.</td></tr>
+   <tr><td><code>workout_notes</code></td><td></td><td>Repeated on every row of the workout.</td></tr>
+   <tr><td><code>exercise_notes</code></td><td></td><td>Repeated on every row of the exercise.</td></tr>
+   <tr><td><code>superset_group</code></td><td>A</td><td>Exercises with the same letter in one workout are a superset.</td></tr>
+   <tr><td><code>workout_id</code>, <code>exercise_id</code>, <code>set_id</code></td><td>(ids)</td><td>Stable ids, so importing the same file again never makes duplicates.</td></tr>
+  </tbody>
+ </table></div>
+ <p>The first 11 columns are the ones people read. The ids at the end make it safe to import the file back into Haapa.</p>
+
+ <h2 class="serif">Importing</h2>
+ <ul>
+  <li>Haapa reads its own files, with the columns in any order.</li>
+  <li>It also reads workout exports from Strong and Hevy. Haapa's Excel plan template, saved as CSV, opens as a plan.</li>
+  <li>Semicolon and tab files work too, and so do decimal commas (82,5).</li>
+  <li>Weights in pounds are converted to kilograms.</li>
+  <li>Before anything is saved, you see a preview and can fix exercise names that don't match.</li>
+ </ul>
+
+</main>
+
+<section class="end" aria-labelledby="get-h">
+ <div class="wrap">
+  <svg class="icon" width="88" height="88" aria-hidden="true"><use href="#haapa"/></svg>
+  <h2 id="get-h" class="serif">Train at your own pace.</h2>
+  <p>Haapa is coming to iPhone and Android in early 2027.</p>
+  <p class="notify"><a href="mailto:hello@haapa.app?subject=Tell%20me%20when%20Haapa%20is%20out">Tell me when it's out</a><span>Send us an email. We'll write once, when the app is out, then delete your address.</span></p>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <a href="mailto:hello@haapa.app">hello@haapa.app</a>
+  <a href="why.html">Why Haapa</a>
+  <a href="faq.html">FAQ</a>
+  <a href="guide.html">Guide</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="csv-format.html">CSV format</a>
+  <span style="padding:8px 0">© 2026 Haapa</span>
+ </div>
+</footer>
+</body></html>

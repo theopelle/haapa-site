@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Get Haapa</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/site.css">
+<!--
+  haapa.app/get: the address printed on cards and posters (QR codes). It must never move or break.
+  Before release: everyone goes to the home page, /fi/ when the phone's language is Finnish.
+  On release day (STORE_RELEASE.md B17): set STORES_LIVE to true and fill in the two store links.
+  Then an iPhone or iPad goes to the App Store, an Android phone to Google Play, and anything else to the home page.
+  Store campaign links per channel (cards, posters) can come later: print /get?c=card and read it here.
+  No cookies, no tracking, no requests to anyone else.
+-->
+<script>
+(function () {
+  var STORES_LIVE = false;
+  var APP_STORE = '';    // e.g. https://apps.apple.com/app/id0000000000
+  var GOOGLE_PLAY = '';  // e.g. https://play.google.com/store/apps/details?id=app.haapa
+
+  var ua = navigator.userAgent || '';
+  var fi = /^fi\b/i.test(navigator.language || '') ||
+    (navigator.languages || []).slice(0, 1).some(function (l) { return /^fi\b/i.test(l); });
+  var home = fi ? '/fi/' : '/';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+
+  var to = home;
+  if (STORES_LIVE && isIOS && APP_STORE) to = APP_STORE;
+  else if (STORES_LIVE && isAndroid && GOOGLE_PLAY) to = GOOGLE_PLAY;
+  location.replace(to);
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/"></noscript>
+</head>
+<body>
+<main class="wrap" style="padding:48px 16px;text-align:center">
+ <h1 class="serif" style="font-size:32px">Haapa</h1>
+ <p style="margin-top:12px;color:var(--ink2)">Taking you to <a href="/">haapa.app</a> · <a href="/fi/" lang="fi">suomeksi</a></p>
+</main>
+</body>
+</html>
